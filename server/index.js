@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors())
 
 app.use('/posts', router)
+
+app.get('/', (req, res) => {
+  res.send('Hello to MEmories API')
+})
 mongoose
   .connect(process.env.MONGODB)
   .then(() => console.log('DB connected'))
